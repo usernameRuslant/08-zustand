@@ -13,6 +13,7 @@ import Loader from '@/components/Loader/Loader';
 import Modal from '@/components/Modal/Modal';
 import NoteForm from '@/components/NoteForm/NoteForm';
 import Error from '../../error';
+import Link from 'next/link';
 
 interface NotesClientProps {
   tag?: string;
@@ -57,9 +58,14 @@ const NotesClient = ({ tag }: NotesClientProps) => {
             onChange={onPageChange}
           />
         )}
-        <button className={css.button} onClick={onOpenModal} type="button">
+        <Link
+          href="/notes/action/create"
+          className={css.button}
+          onClick={onOpenModal}
+          type="button"
+        >
           Create note +
-        </button>
+        </Link>
       </div>
       {isLoading && !data && <Loader />}
       {isError && error && <Error error={error as Error} />}
@@ -69,11 +75,11 @@ const NotesClient = ({ tag }: NotesClientProps) => {
         !isLoading && <p>Notes not found</p>
       )}
 
-      {modalIsOpen && (
+      {/* {modalIsOpen && (
         <Modal closeModal={onCloseModal}>
           <NoteForm closeModal={onCloseModal} />
         </Modal>
-      )}
+      )} */}
     </div>
   );
 };
