@@ -10,8 +10,6 @@ import Pagination from '@/components/Pagination/Pagination';
 import NoteList from '@/components/NoteList/NoteList';
 import Loader from '@/components/Loader/Loader';
 
-import Modal from '@/components/Modal/Modal';
-import NoteForm from '@/components/NoteForm/NoteForm';
 import Error from '../../error';
 import Link from 'next/link';
 
@@ -35,13 +33,6 @@ const NotesClient = ({ tag }: NotesClientProps) => {
     setPage(page);
   };
 
-  const onOpenModal = () => {
-    setModalIsOpen(true);
-  };
-
-  const onCloseModal = () => {
-    setModalIsOpen(false);
-  };
   const onChangeSearch = useDebouncedCallback((value: string) => {
     setSearch(value);
     setPage(1);
@@ -58,12 +49,7 @@ const NotesClient = ({ tag }: NotesClientProps) => {
             onChange={onPageChange}
           />
         )}
-        <Link
-          href="/notes/action/create"
-          className={css.button}
-          onClick={onOpenModal}
-          type="button"
-        >
+        <Link href="/notes/action/create" className={css.button}>
           Create note +
         </Link>
       </div>
@@ -74,12 +60,6 @@ const NotesClient = ({ tag }: NotesClientProps) => {
       ) : (
         !isLoading && <p>Notes not found</p>
       )}
-
-      {/* {modalIsOpen && (
-        <Modal closeModal={onCloseModal}>
-          <NoteForm closeModal={onCloseModal} />
-        </Modal>
-      )} */}
     </div>
   );
 };
