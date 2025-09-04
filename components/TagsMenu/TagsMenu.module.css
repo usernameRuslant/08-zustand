@@ -4,7 +4,7 @@
 }
 
 .menuButton {
-  width: 150px;
+  width: 130px;
   display: flex;
   justify-content: space-between;
   background-color: #f5f5f5;
@@ -27,7 +27,7 @@
 .menuList {
   position: absolute;
   top: calc(100% + 6px);
-  left: 0px;
+  left: -1px;
   background-color: #333;
   border: 1px solid #ddd;
   border-radius: 8px;
@@ -35,7 +35,7 @@
   padding: 6px 0;
   margin: 0;
   list-style: none;
-  min-width: 150px;
+  min-width: 130px;
   z-index: 1000;
 }
 

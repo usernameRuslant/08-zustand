@@ -19,12 +19,12 @@
 @media (max-width: 767px) {
   .toolbar {
     flex-direction: column;
-    align-items: stretch; /* растянет элементы на всю ширину */
-    gap: 12px; /* промежуток между элементами */
+    align-items: stretch; /**/
+    gap: 12px; /**/
   }
 
   .button {
-    width: 100%; /* кнопка займет всю ширину */
+    /* width: 100%; */
     text-align: center;
   }
 }
